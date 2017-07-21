@@ -2,12 +2,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sonworks.fragmentactivitysample.fragment.BFragment">
+    tools:context="com.example.sonworks.fragmentactivitysample.fragment.BFragment"
+    android:background="#5000CCCC">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Switched BFragment" />
+
+        <Button
+            android:id="@+id/bButtonId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="Go Back"/>
+
+    </LinearLayout>
 
 </FrameLayout>

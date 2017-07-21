@@ -3,10 +3,14 @@ package com.example.sonworks.fragmentactivitysample.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.sonworks.fragmentactivitysample.R;
 
@@ -105,5 +109,23 @@ public class AFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        final Button aButton = (Button) view.findViewById(R.id.aButtonId);
+        aButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO: Rename and change types of parameters
+                final String PARAM1 = "param1";
+                final String PARAM2 = "param2";
+
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragmentLayoutId, BFragment.newInstance(PARAM1, PARAM2)).commit();
+            }
+        });
     }
 }
